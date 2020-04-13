@@ -7,5 +7,5 @@ import com.covid.app.shared.SuccessResponse;
 
 public interface CreateMonitorsService{
 
-	public ResponseEntity<SuccessResponse> createMonitors(CreateMonitors createMonitors);
+	public ResponseEntity<SuccessResponse> addMonitor(CreateMonitors createMonitors);
 }

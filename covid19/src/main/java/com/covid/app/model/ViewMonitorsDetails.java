@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
-@Table(name = "monitors")
+@Table(name = "monitor")
 public class ViewMonitorsDetails {
 
 	@Id

@@ -5,46 +5,47 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
-@Table(name = "qurantinemanagers")
+@Table(name = "qurantinemangeer")
 public class ListQMs {
-	
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.AUTO)
-//	@JsonProperty(value="Id")
-//	@Column(name = "id")
-//	private Long id;
-	
+
 	@Id
-	@JsonProperty(value="QId")
-	@Column(name = "qid")
-	private Long qid;
-	
-	@JsonProperty(value="First Name")
+	@JsonProperty(value = "QmId")
+	@Column(name = "qmid")
+	private Long qmid;
+
+	@JsonProperty(value = "First Name")
 	@Column(name = "firstname")
 	private String firstname;
-	
-	@JsonProperty(value="Last Name")
+
+	@JsonProperty(value = "Last Name")
 	@Column(name = "lastname")
 	private String lastname;
-	
-	@JsonProperty(value="Contact Number")
-	@Column(name = "contactnumber")
-	private Long contactnumber;
-	
-	@JsonProperty(value="Email Id")
-	@Column(name = "emailid")
-	private String emailid;
-	
-	@JsonProperty(value="Zone")
+
+	@JsonProperty(value = "Contact Number")
+	@Column(name = "phone")
+	private Long phone;
+
+	@JsonProperty(value = "Email Id")
+	@Column(name = "email")
+	private String email;
+
+	@JsonProperty(value = "Zone")
 	@Column(name = "zone")
 	private String zone;
-	
-	public ListQMs() {}
 
+	public ListQMs() {
+	}
+
+	public Long getQmid() {
+		return qmid;
+	}
+
+	public void setQmid(Long qmid) {
+		this.qmid = qmid;
+	}
 
 	public String getFirstname() {
 		return firstname;
@@ -62,19 +63,20 @@ public class ListQMs {
 		this.lastname = lastname;
 	}
 
-	public String getEmailid() {
-		return emailid;
+	public Long getPhone() {
+		return phone;
 	}
 
-	public void setEmailid(String emailid) {
-		this.emailid = emailid;
-	}
-	public Long getContactnumber() {
-		return contactnumber;
+	public void setPhone(Long phone) {
+		this.phone = phone;
 	}
 
-	public void setContactnumber(Long contactnumber) {
-		this.contactnumber = contactnumber;
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getZone() {
@@ -84,24 +86,11 @@ public class ListQMs {
 	public void setZone(String zone) {
 		this.zone = zone;
 	}
-	
-
-
-	public Long getQid() {
-		return qid;
-	}
-
-
-	public void setQid(Long qid) {
-		this.qid = qid;
-	}
-
 
 	@Override
 	public String toString() {
-		return "ListQMs [qid=" + qid + ", firstname=" + firstname + ", lastname=" + lastname + ", contactnumber="
-				+ contactnumber + ", emailid=" + emailid + ", zone=" + zone + "]";
+		return "ListQMs [qmid=" + qmid + ", firstname=" + firstname + ", lastname=" + lastname + ", phone=" + phone
+				+ ", email=" + email + ", zone=" + zone + "]";
 	}
-
 
 }

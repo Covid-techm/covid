@@ -11,95 +11,93 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
-@Table(name = "monitors")
+@Table(name = "monitor")
 public class CreateMonitors {
-	
 
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@JsonProperty(value="MId")
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonProperty(value = "mid")
 	@Column(name = "mid")
 	private Long mid;
-	
-	@JsonProperty(value="First Name")
+
+	@JsonProperty(value = "First Name")
 	@Column(name = "firstname")
 	private String firstname;
-	
-	@JsonProperty(value="Last Name")
+
+	@JsonProperty(value = "Last Name")
 	@Column(name = "lastname")
 	private String lastname;
-	
-	@JsonProperty(value="Contact Number")
-	@Column(name = "contactnumber")
-	private Long contactnumber;
-	
-	@JsonProperty(value="Email Id")
-	@Column(name = "emailid")
-	private String emailid;
-	
-	@JsonProperty(value="Designation")
+
+	@JsonProperty(value = "phone")
+	@Column(name = "phone")
+	private String phone;
+
+	@JsonProperty(value = "Email Id")
+	@Column(name = "email")
+	private String email;
+
+	@JsonProperty(value = "Designation")
 	@Column(name = "designation")
 	private String designation;
-	
-	@JsonProperty(value="Department")
+
+	@JsonProperty(value = "Department")
 	@Column(name = "department")
 	private String department;
-	
-	@JsonProperty(value="Zone")
+
+	@JsonProperty(value = "Zone")
 	@Column(name = "zone")
 	private String zone;
 	
-	@JsonProperty(value="House No")
-	@Column(name = "houseno")
-	private Long houseno;
+	@JsonProperty(value = "Id Card Type")
+	@Column(name = "idcardtype")
+	private String IdCardType;
+
 	
-	@JsonProperty(value="Street Name")
+	@JsonProperty(value = "House No")
+	@Column(name = "hno")
+	private Long houseno;
+
+	@JsonProperty(value = "Street Name")
 	@Column(name = "streetname")
 	private String streetname;
-	
-	@JsonProperty(value="Area")
+
+	@JsonProperty(value = "Area")
 	@Column(name = "area")
 	private String area;
-	
-	@JsonProperty(value="City")
+
+	@JsonProperty(value = "City")
 	@Column(name = "city")
 	private String city;
-	
-	@JsonProperty(value="State")
+
+	@JsonProperty(value = "State")
 	@Column(name = "state")
 	private String state;
-	
-	@JsonProperty(value="Pin Code")
+
+	@JsonProperty(value = "Pin Code")
 	@Column(name = "pincode")
 	private Long pincode;
 	
-	
+
+	@JsonProperty(value = "Login Name")
+	@Column(name = "loginname")
+	private String loginname;
 	
 
 
-	public CreateMonitors(Long mid, String firstname, String lastname, Long contactnumber, String emailid,
-			String designation, String department, String zone, Long houseno, String streetname, String area,
-			String city, String state, Long pincode) {
-		super();
-		this.mid = mid;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.contactnumber = contactnumber;
-		this.emailid = emailid;
-		this.designation = designation;
-		this.department = department;
-		this.zone = zone;
-		this.houseno = houseno;
-		this.streetname = streetname;
-		this.area = area;
-		this.city = city;
-		this.state = state;
-		this.pincode = pincode;
+	public String getLoginName() {
+		return loginname;
 	}
 
+	public void setLoginName(String loginname) {
+		this.loginname = loginname;
+	}
+	public Long getMid() {
+		return mid;
+	}
 
-	public CreateMonitors() {}
-
-	
+	public void setMid(Long mid) {
+		this.mid = mid;
+	}
 
 	public String getFirstname() {
 		return firstname;
@@ -117,20 +115,36 @@ public class CreateMonitors {
 		this.lastname = lastname;
 	}
 
-	public String getEmailid() {
-		return emailid;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setEmailid(String emailid) {
-		this.emailid = emailid;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
-	public Long getContactnumber() {
-		return contactnumber;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setContactnumber(Long contactnumber) {
-		this.contactnumber = contactnumber;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getDesignation() {
+		return designation;
+	}
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
 	}
 
 	public String getZone() {
@@ -140,125 +154,70 @@ public class CreateMonitors {
 	public void setZone(String zone) {
 		this.zone = zone;
 	}
-	
 
-	
-	
-	public Long getMid() {
-		return mid;
+	public String getIdCardType() {
+		return IdCardType;
 	}
 
-
-
-	public void setMid(Long mid) {
-		this.mid = mid;
+	public void setIdCardType(String idCardType) {
+		IdCardType = idCardType;
 	}
-
-
 
 	public Long getHouseno() {
 		return houseno;
 	}
 
-
-
 	public void setHouseno(Long houseno) {
 		this.houseno = houseno;
 	}
-
-
 
 	public String getStreetname() {
 		return streetname;
 	}
 
-
-
 	public void setStreetname(String streetname) {
 		this.streetname = streetname;
 	}
-
-
 
 	public String getArea() {
 		return area;
 	}
 
-
-
 	public void setArea(String area) {
 		this.area = area;
 	}
-
-
 
 	public String getCity() {
 		return city;
 	}
 
-
-
 	public void setCity(String city) {
 		this.city = city;
 	}
-
-
 
 	public String getState() {
 		return state;
 	}
 
-
-
 	public void setState(String state) {
 		this.state = state;
 	}
-
-
 
 	public Long getPincode() {
 		return pincode;
 	}
 
-
-
 	public void setPincode(Long pincode) {
 		this.pincode = pincode;
 	}
 
-	
-	
-	public String getDesignation() {
-		return designation;
-	}
-
-
-
-	public void setDesignation(String designation) {
-		this.designation = designation;
-	}
-
-
-
-	public String getDepartment() {
-		return department;
-	}
-
-
-
-	public void setDepartment(String department) {
-		this.department = department;
-	}
-
-
 	@Override
 	public String toString() {
-		return "CreateMonitors [mid=" + mid + ", firstname=" + firstname + ", lastname=" + lastname + ", contactnumber="
-				+ contactnumber + ", emailid=" + emailid + ", designation=" + designation + ", department=" + department
-				+ ", zone=" + zone + ", houseno=" + houseno + ", streetname=" + streetname + ", area=" + area
-				+ ", city=" + city + ", state=" + state + ", pincode=" + pincode + "]";
+		return "CreateMonitors [mid=" + mid + ", firstname=" + firstname + ", lastname=" + lastname + ", phone=" + phone
+				+ ", email=" + email + ", designation=" + designation + ", department=" + department + ", zone=" + zone
+				+ ", IdCardType=" + IdCardType + ", houseno=" + houseno + ", streetname=" + streetname + ", area="
+				+ area + ", city=" + city + ", state=" + state + ", pincode=" + pincode + ", loginName=" + loginname
+				+ "]";
 	}
 
-
 }
-

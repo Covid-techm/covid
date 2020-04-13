@@ -20,10 +20,10 @@ public class CreateMonitorsController {
 	@Autowired
 	private CreateMonitorsService createMonitorsService;
 	
-	@PostMapping(value = "/createmonitors" )
-	public ResponseEntity<SuccessResponse> createMonitors(@RequestBody CreateMonitors createMonitors){
+	@PostMapping(value = "/addMonitor" )
+	public ResponseEntity<SuccessResponse> addMonitor(@RequestBody CreateMonitors createMonitors){
 		
-		return createMonitorsService.createMonitors(createMonitors);
+		return createMonitorsService.addMonitor(createMonitors);
 		
 	}
 
