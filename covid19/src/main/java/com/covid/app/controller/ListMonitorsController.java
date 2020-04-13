@@ -1,5 +1,6 @@
 package com.covid.app.controller;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,11 @@ public class ListMonitorsController {
 
 		return listMonitorsService.viewMonitorsDetails(viewMonitorsDetails, mid);
 
+	}
+	
+	@RequestMapping(value = "/searchMonitorByPincode/{pinCode}", method = RequestMethod.GET,produces = { "application/json" })
+	public List<ListMonitors> searchMonitorByPincode(@PathVariable("pinCode") String pinCode) {
+		return listMonitorsService.searchMonitorByPincode(pinCode,pinCode);
 	}
 	
 	@ExceptionHandler(NoSuchElementException.class)

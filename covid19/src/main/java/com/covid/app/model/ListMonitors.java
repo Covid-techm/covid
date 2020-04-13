@@ -34,13 +34,13 @@ public class ListMonitors implements Serializable{
 	@Column(name = "lastname")
 	private String lastname;
 	
-	@JsonProperty(value="Contact Number")
-	@Column(name = "contactnumber")
-	private Long contactnumber;
+	@JsonProperty(value="Phone Number")
+	@Column(name = "phone")
+	private Long phone;
 	
 	@JsonProperty(value="Email Id")
-	@Column(name = "emailid")
-	private String emailid;
+	@Column(name = "email")
+	private String email;
 	
 	@JsonProperty(value="Zone")
 	@Column(name = "zone")
@@ -51,9 +51,9 @@ public class ListMonitors implements Serializable{
 	private Long pincode;
 	
 
-	@ManyToOne(targetEntity=HealthStatus.class,fetch=FetchType.LAZY)
-	//	//@JoinColumn(name="imei_id") 
-	private List<HealthStatus> healthStatus;
+//	@ManyToOne(targetEntity=HealthStatus.class,fetch=FetchType.LAZY)
+//	//	//@JoinColumn(name="imei_id") 
+//	private List<HealthStatus> healthStatus;
 	
 	public ListMonitors() {}
 
@@ -81,22 +81,7 @@ public class ListMonitors implements Serializable{
 		this.lastname = lastname;
 	}
 
-	public Long getContactnumber() {
-		return contactnumber;
-	}
-
-	public void setContactnumber(Long contactnumber) {
-		this.contactnumber = contactnumber;
-	}
-
-	public String getEmailid() {
-		return emailid;
-	}
-
-	public void setEmailid(String emailid) {
-		this.emailid = emailid;
-	}
-
+	
 	public String getZone() {
 		return zone;
 	}
@@ -113,11 +98,30 @@ public class ListMonitors implements Serializable{
 		this.pincode = pincode;
 	}
 
+	public Long getPhone() {
+		return phone;
+	}
+
+	public void setPhone(Long phone) {
+		this.phone = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	
+
 	@Override
 	public String toString() {
-		return "ListMonitors [mid=" + mid + ", firstname=" + firstname + ", lastname=" + lastname + ", contactnumber="
-				+ contactnumber + ", emailid=" + emailid + ", zone=" + zone + ", pincode=" + pincode + "]";
+		return "ListMonitors [mid=" + mid + ", firstname=" + firstname + ", lastname=" + lastname + ", phone=" + phone
+				+ ", email=" + email + ", zone=" + zone + ", pincode=" + pincode +  "]";
 	}
+
 
 	
 	
