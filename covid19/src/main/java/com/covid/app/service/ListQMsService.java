@@ -12,7 +12,7 @@ import com.covid.app.model.CreateQMs;
 public interface ListQMsService {
 	
 	public Iterable<CreateQMs> getAllQMs();
-	public List<CreateQMs> getQmByPinCode(String pinCode,String zone);
+	public List<CreateQMs> getQmByPinCode(Long pinCode);
 	public ResponseEntity<?> viewQMsDetails(CreateQMs viewQMsDetails, Long qid);
 
 }

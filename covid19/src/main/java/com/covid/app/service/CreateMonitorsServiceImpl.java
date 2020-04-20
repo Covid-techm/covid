@@ -1,10 +1,13 @@
 package com.covid.app.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.covid.app.model.CreateQMs;
 import com.covid.app.model.monitor;
 import com.covid.app.repository.MonitorRepository;
 import com.covid.app.shared.SuccessResponse;
@@ -32,6 +35,12 @@ public class CreateMonitorsServiceImpl implements CreateMonitorsService {
 	public Iterable<monitor> getAllMonitors() {
 		Iterable<monitor> monitor = this.createMonitorsRepository.findAll();
 		return Lists.newArrayList(monitor);
+	}
+
+	@Override
+	public List<monitor> getMonitorByPinCode(Long pinCode) {
+		// TODO Auto-generated method stub
+		return createMonitorsRepository.getMonitorByPincode(pinCode);
 	}
 
 }

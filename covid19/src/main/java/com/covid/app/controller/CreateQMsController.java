@@ -20,7 +20,7 @@ public class CreateQMsController {
 	@Autowired
 	private CreateQMsService createQMsService;
 	
-	@PostMapping(value = "/createQMS" )
+	@PostMapping(value = "/createQMDetails" )
 	public ResponseEntity<SuccessResponse> createQMs(@RequestBody CreateQMs createQMs){
 		
 		return createQMsService.createQMs(createQMs);
