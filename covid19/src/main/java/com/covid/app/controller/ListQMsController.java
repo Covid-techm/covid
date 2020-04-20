@@ -25,15 +25,15 @@ public class ListQMsController {
 	@Autowired
 	private ListQMsService listQMsService;
 
-	@RequestMapping(value = "/listqms", method = RequestMethod.GET)
+	@RequestMapping(value = "/listQMGRS", method = RequestMethod.GET)
 	public Iterable<CreateQMs> getAllQMs() {
 		return listQMsService.getAllQMs();
 	}
 
-	@RequestMapping(value = "/listQmByZoneOrPinCode/{qid}", method = RequestMethod.GET, produces = {
+	@RequestMapping(value = "/listQmByPinCode/{qid}", method = RequestMethod.GET, produces = {
 			"application/json" })
-	public List<CreateQMs> listQmByZoneOrPinCode(@PathVariable("qid") String qid) {
-		return listQMsService.getQmByPinCode(qid, qid);
+	public List<CreateQMs> listQmByZoneOrPinCode(@PathVariable("qid") Long qid) {
+		return listQMsService.getQmByPinCode(qid);
 	}
 
 	@RequestMapping(value = "/qmsdetails/{qid}", method = RequestMethod.GET, produces = { "application/json" })

@@ -8,5 +8,6 @@ import com.covid.app.shared.SuccessResponse;
 public interface CreateQMsService {
 	
 	public ResponseEntity<SuccessResponse> createQMs(CreateQMs createQMs);
+	public long getTotalQMGRS();
 
 }

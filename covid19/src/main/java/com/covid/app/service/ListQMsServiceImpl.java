@@ -36,8 +36,8 @@ public class ListQMsServiceImpl implements ListQMsService {
 	}
 
 	@Override
-	public List<CreateQMs> getQmByPinCode(String pinCode,String zone) {
-		return listQMsRepository.getQms(pinCode, zone);
+	public List<CreateQMs> getQmByPinCode(Long pinCode) {
+		return listQMsRepository.getQms(pinCode);
 	}
 	
 

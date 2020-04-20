@@ -1,6 +1,9 @@
 package com.covid.app.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.gcp.data.datastore.core.DatastoreTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -15,6 +18,9 @@ public class CreateMonitorsServiceImpl implements CreateMonitorsService {
 
 	@Autowired
 	private MonitorRepository createMonitorsRepository;
+
+	@Autowired
+	private DatastoreTemplate dataStoreTemplate;
 
 	@Override
 	public ResponseEntity<SuccessResponse> saveMonitor(monitor createMonitors) {
@@ -32,6 +38,18 @@ public class CreateMonitorsServiceImpl implements CreateMonitorsService {
 	public Iterable<monitor> getAllMonitors() {
 		Iterable<monitor> monitor = this.createMonitorsRepository.findAll();
 		return Lists.newArrayList(monitor);
+	}
+
+	@Override
+	public List<monitor> getMonitorByPinCode(Long pinCode) {
+		// TODO Auto-generated method stub
+		return createMonitorsRepository.getMonitorByPincode(pinCode);
+	}
+
+	@Override
+	public long getTotalMonitors() {
+		// TODO Auto-generated method stub
+		return dataStoreTemplate.count(monitor.class);
 	}
 
 }

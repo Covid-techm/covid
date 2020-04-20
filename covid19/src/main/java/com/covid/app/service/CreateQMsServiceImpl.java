@@ -1,6 +1,7 @@
 package com.covid.app.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.gcp.data.datastore.core.DatastoreTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,9 @@ public class CreateQMsServiceImpl implements CreateQMsService{
 	@Autowired
 	private CreateQMsRepository createQMsRepository;
 	
+	@Autowired
+	private DatastoreTemplate dataStoreTemplate;
+	
 	public ResponseEntity<SuccessResponse> createQMs(CreateQMs createQMs){
 		
 		createQMsRepository.save(createQMs);
@@ -24,6 +28,12 @@ public class CreateQMsServiceImpl implements CreateQMsService{
 		success.setMessage("Profile has been created successfully");
 		
 		return new ResponseEntity<SuccessResponse>(success, HttpStatus.OK);
+		
+	}
+
+	@Override
+	public long getTotalQMGRS() {
+		return dataStoreTemplate.count(CreateQMs.class);
 		
 	}
 
