@@ -17,22 +17,23 @@ import com.covid.app.shared.SuccessResponse;
 @RestController
 @RequestMapping("/app")
 public class CreateQMsController {
-
+	
 	@Autowired
 	private CreateQMsService createQMsService;
-
-	@PostMapping(value = "/createQMDetails")
-	public ResponseEntity<SuccessResponse> createQMs(@RequestBody CreateQMs createQMs) {
-
+	
+	@PostMapping(value = "/createQMDetails" )
+	public ResponseEntity<SuccessResponse> createQMs(@RequestBody CreateQMs createQMs){
+		
 		return createQMsService.createQMs(createQMs);
-
+		
 	}
-
+	
 	@GetMapping(value = "totalQMGRS")
 	public long getTotalQMGRS() {
-
+		
 		return createQMsService.getTotalQMGRS();
-
+		
 	}
+
 
 }

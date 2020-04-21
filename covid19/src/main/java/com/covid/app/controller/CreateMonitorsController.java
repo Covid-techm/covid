@@ -44,7 +44,5 @@ public class CreateMonitorsController {
 	@GetMapping(value = "totalMonitors")
 	public long totalMonitors() {
 		return createMonitorsService.getTotalMonitors();
-
 	}
-
 }
