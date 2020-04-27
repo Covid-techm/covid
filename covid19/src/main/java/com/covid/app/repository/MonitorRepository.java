@@ -12,7 +12,7 @@ import com.covid.app.model.monitor;
 @Repository
 public interface MonitorRepository extends DatastoreRepository<monitor, Long> {
 
-	@Query(value = "select * from monitor where pincode=@pincode")
-	List<monitor> getMonitorByPincode(@Param("pincode") Long pinCode);
+	@Query(value = "select * from monitor where pinCode=@pinCode")
+	List<monitor> getMonitorByPincode(@Param("pinCode") Long pinCode);
 
 }

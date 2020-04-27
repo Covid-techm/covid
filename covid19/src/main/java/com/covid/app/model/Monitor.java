@@ -33,7 +33,7 @@ public class monitor {
 
 	String state;
 
-	Long pincode;
+	Long pinCode;
 	
 
 	public Long getId() {
@@ -166,25 +166,22 @@ public class monitor {
 	}
 
 
-	public Long getPincode() {
-		return pincode;
+	public Long getPinCode() {
+		return pinCode;
 	}
-
-
-	public void setPincode(Long pincode) {
-		this.pincode = pincode;
+	public void setPinCode(Long pinCode) {
+		this.pinCode = pinCode;
 	}
-
-
+	
 	@Override
 	public String toString() {
-		return "monitor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", contactNumber="
-				+ contactNumber + ", emailId=" + emailId + ", designation=" + designation + ", department=" + department
-				+ ", zone=" + zone + ", houseno=" + houseno + ", streetName=" + streetName + ", area=" + area
-				+ ", city=" + city + ", state=" + state + ", pincode=" + pincode + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+		return "EndUser [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", contactNumber="
+				+ contactNumber + ", emailId=" + emailId + ", houseno=" + houseno + ", streetName=" + streetName
+				+ ", area=" + area + ", city=" + city + ", state=" + state + ", pinCode=" + pinCode + ", govtId="
+				+ govtId + ", govtIdType=" + govtIdType + ", dob=" + dob + ", quarantineStartDate="
+				+ quarantineStartDate + ", fever=" + fever + ", cough=" + cough + ", breathing=" + breathing
+				+ ", runnynose=" + runnynose + ", temperature=" + temperature + ", fatigue=" + fatigue + ", diarrhea="
+				+ diarrhea + ", mFirstName=" + mFirstName + ", mLastName=" + mLastName + ", mContactNumber="
+				+ mContactNumber + ", zone=" + zone + ", mEmailId=" + mEmailId + "]";
 	}
-	
-	
-
 }
